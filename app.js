@@ -8,3 +8,14 @@ request({
 }, (error, response) => {
     console.log(response.body.daily.data[0].summary + ' It is currently ' + response.body.currently.temperature + ' degrees out. There is a ' + response.body.currently.precipProbability + ' % chance of rain');
 });
+
+const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiYWFsYmE5MyIsImEiOiJjanQxcWtlcjgwZXkxNDRtbzBiZXI1cDM3In0.xRXvvJtUvEJL4tFdERfp7Q&limit=1';
+
+request({
+    url: geocodeURL,
+    json: true
+}, (error, response) => {
+    const latitue = response.body.features[0].center[1];
+    const longitude = response.body.features[0].center[0];
+    console.log(latitue, longitude);
+});
