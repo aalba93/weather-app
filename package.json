@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Node.js application developed by Andrew J. Mead in his course The Complete Node.js Developer Guide (3rd. Edition) available in Udemy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aalba93/weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aalba93/weather-app/issues"
+  },
+  "homepage": "https://github.com/aalba93/weather-app#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
