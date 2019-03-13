@@ -1,7 +1,6 @@
 const request = require('request');
 const geocode = require('./utils/geocode');
-
-const url = 'https://api.darksky.net/forecast/fc2044bdaa450ea332cdf82740665a01/37.8267,-122.4233?units=si&lang=es';
+const forecast = require('./utils/forecast');
 
 // request({
 //     url: url,
@@ -16,25 +15,12 @@ const url = 'https://api.darksky.net/forecast/fc2044bdaa450ea332cdf82740665a01/3
 //     }
 // });
 
-const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Bogota.json?access_token=pk.eyJ1IjoiYWFsYmE5MyIsImEiOiJjanQxcWtlcjgwZXkxNDRtbzBiZXI1cDM3In0.xRXvvJtUvEJL4tFdERfp7Q&limit=1';
-
-// request({
-//     url: geocodeURL,
-//     json: true
-// }, (error, response) => {
-//     if (error) {
-//         console.log('Unable to connect to location services!');
-//     } else if (response.body.features.length === 0) {
-//         console.log('Unable to find location. Try another search');
-//     } else {
-//         const latitue = response.body.features[0].center[1];
-//         const longitude = response.body.features[0].center[0];
-//         console.log(latitue, longitude);
-//     }
-    
-// });
-
 geocode('Philadelphia', (error, data) => {
     console.log('Error', error);
     console.log('Data', data);
 });
+
+forecast(-75.7088, 44.1545, (error, data) => {
+    console.log('Error', error)
+    console.log('Data', data)
+  })
